@@ -1,0 +1,88 @@
+﻿@model service_station.Models.Car
+@{
+    ViewBag.Title = "Edit customer car";
+}
+
+<div class="body-content">
+    <div class="container personal">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.CustomerId)
+            <div class="row">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3">
+                    @Html.ActionLink("Back to Personal", "Personal", "Customer", new { id = Model.CustomerId }, new { @class = "btn btn-default" })
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3">
+                    <div class="info">
+                        <div class="info-name">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h3 class="text-center">Add car</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-content">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    @Html.DisplayNameFor(model => model.Make):
+                                </div>
+                                <div class="col-xs-9">
+                                    @Html.EditorFor(model => model.Make, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Make, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    @Html.DisplayNameFor(model => model.Model):
+                                </div>
+                                <div class="col-xs-9">
+                                    @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    @Html.DisplayNameFor(model => model.VIN):
+                                </div>
+                                <div class="col-xs-9">
+                                    @Html.EditorFor(model => model.VIN, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.VIN, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    @Html.DisplayNameFor(model => model.Year):
+                                </div>
+                                <div class="col-xs-9">
+                                    @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-offset-2 col-xs-10">
+                                    <input type="submit" value="Save" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryinputmask")
+    @Scripts.Render("~/bundles/intlTelInput")
+    @Scripts.Render("~/bundles/jq")
+
+}
+

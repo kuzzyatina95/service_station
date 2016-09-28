@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@*<section id="main">
+    <div class="container-fluid">
+        <div class="numbers">
+            <div class="col-xs-4 col-xs-offset-8 col-sm-3 col-sm-offset-9">
+
+            </div>
+        </div>
+        
+    </div>
+</section>*@
+
+<div id="wrapper">
+    <div class="body-content">
+        <section id="main">
+            <div class="container-fluid">
+                <div class="intro-text">
+                    <h1 class="text-center main-text">Service station</h1>
+                    <div class="col-sm-offset-5 col-sm-2 text-center">
+                        @Html.ActionLink("New order", "Find", "Customer", null, new { @class = "btn btn-xl" })
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+﻿@model service_station.Models.CarOrders
+
+@if (Model.Orders.Count() == 0)
+{
+    <a href="@Url.Action("Delete", "Garage", new {id = Model.CarId})" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-trash"></i></a>
+}
